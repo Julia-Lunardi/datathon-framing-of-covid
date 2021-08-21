@@ -30,7 +30,7 @@ agg_omni = omnibus %>%
   group_by(day) %>% 
   summarise(across(starts_with("topic_"), ~ mean(.x, na.rm = TRUE)))
 
-agg_tabl = omnibus %>% 
+agg_tabl = tabloid %>% 
   mutate(day = floor_date(date, "day")) %>% 
   select(day, all_of(tabl_topics)) %>% 
   group_by(day) %>% 
